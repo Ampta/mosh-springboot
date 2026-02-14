@@ -2,6 +2,7 @@ package com.ampta.store.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -11,6 +12,13 @@ import java.util.Map;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<ErrorDto> handleUnreadableMessage(){
+        return ResponseEntity.badRequest().body(
+                new ErrorDto("Invalid request parameters")
+        );
+    }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, String>> handleValidationsErrors(
@@ -27,16 +35,18 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(CartNotFoundException.class)
-    public ResponseEntity<Map<String, String>> handleCartNotFound(){
+    public ResponseEntity<ErrorDto> handleCartNotFound(){
         return   ResponseEntity.status(HttpStatus.NOT_FOUND).body(
-                Map.of("error", "Cart not found")
+                new ErrorDto("Cart not found")
         );
     }
 
     @ExceptionHandler(ProductNotFoundException.class)
-    public ResponseEntity<Map<String, String>> handleProductNotFound(){
+    public ResponseEntity<ErrorDto> handleProductNotFound(){
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
-                Map.of("error", "Product not found in the cart")
+                new ErrorDto("Product not found in the cart")
         );
     }
+
+
 }
