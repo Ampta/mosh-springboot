@@ -1,9 +1,6 @@
 package com.ampta.store.payments;
 
-import com.ampta.store.entities.Order;
-import com.ampta.store.payments.CheckoutSession;
-import com.ampta.store.payments.PaymentResult;
-import com.ampta.store.payments.WebhookRequest;
+import com.ampta.store.orders.Order;
 
 import java.util.Optional;
 

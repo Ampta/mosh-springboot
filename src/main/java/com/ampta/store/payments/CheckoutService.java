@@ -1,12 +1,12 @@
 package com.ampta.store.payments;
 
-import com.ampta.store.entities.Order;
-import com.ampta.store.exceptions.CartEmptyException;
-import com.ampta.store.exceptions.CartNotFoundException;
-import com.ampta.store.repositories.CartRepository;
-import com.ampta.store.repositories.OrderRepository;
-import com.ampta.store.services.AuthService;
-import com.ampta.store.services.CartService;
+import com.ampta.store.orders.Order;
+import com.ampta.store.carts.CartEmptyException;
+import com.ampta.store.carts.CartNotFoundException;
+import com.ampta.store.carts.CartRepository;
+import com.ampta.store.orders.OrderRepository;
+import com.ampta.store.auth.AuthService;
+import com.ampta.store.carts.CartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
