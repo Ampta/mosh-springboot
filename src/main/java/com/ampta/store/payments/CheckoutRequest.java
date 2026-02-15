@@ -1,4 +1,4 @@
-package com.ampta.store.dtos;
+package com.ampta.store.payments;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;

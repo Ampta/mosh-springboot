@@ -1,12 +1,8 @@
 package com.ampta.store.controllers;
 
 import com.ampta.store.dtos.OrderDto;
-import com.ampta.store.entities.Order;
 import com.ampta.store.exceptions.ErrorDto;
 import com.ampta.store.exceptions.OrderNotFoundException;
-import com.ampta.store.mappers.OrderMapper;
-import com.ampta.store.repositories.OrderRepository;
-import com.ampta.store.services.AuthService;
 import com.ampta.store.services.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

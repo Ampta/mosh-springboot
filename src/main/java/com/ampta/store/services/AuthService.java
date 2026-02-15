@@ -3,7 +3,6 @@ package com.ampta.store.services;
 import com.ampta.store.entities.User;
 import com.ampta.store.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
